@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>이미지 태그 예제</title>
+</head>
+    <body>
+        <h2>🐶 귀여운 강아지 이미지</h2>
+        <!-- 기본 이미지 표시 -->
+        <img src = "https://www.pawlovetreats.com/cdn/shop/articles/pembroke-welsh-corgi-puppy_1000x.jpg?v=1628638716"
+            alt = "강아지" width = "300" height = "200"/>
+
+        <hr />
+
+        <h2>💦 명화</h2>
+        <!--상대적 경로로 표시. 프로젝트는 example 파일에 저장되므로 한단계 나가서 image 폴더에 들어가면 됨-->
+        <img src="../image/pic1.jpg"  
+             alt="강아지" width="300" height="200" />
+        
+        <hr />
+
+        <h2>🐱이미지에 title 속성 추가</h2>
+		<!-- 이미지에 마우스를 올리면 설명 표시 -->
+		<img src="https://images.pexels.com/photos/18041064/pexels-photo-18041064/free-photo-of-kitten-lying-down-on-floor.jpeg"
+			alt="고양이" width="300" title="귀여운 고양이" />
+
+        <hr />
+
+        <h2>🦊 이미지가 없을 때 대체 텍스트</h2>
+        <!-- 존재하지 않는 이미지일 경우 특정 텍스트 표시 -->
+        <img src="https://example.com/no-image.jpg" alt="이미지를 불러올 수 없습니다." width="300" />
+
+        <hr />
+
+        <h2>🦜 이미지 크기 조절</h2>
+        <img src="https://imgnn.seoul.co.kr/img/upload/2011/09/15/SSI_20110915142256_V.jpg"
+            alt="앵무새" width="300" height="300" />
+    </body>
+</html>
