@@ -1,22 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
         <title>입력 양식 태그 확인</title>
     </head>
     <body>
         <form method="get">
-        <table>
-            <tr>
-                <td><label for="user_id">아이디</label></td>
-                <td><input type="text" name="user_id" id="user_id" size="20" maxlength="12" 
-                    placeholder="id 입력" /></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td><input type="password" name="pwd" size="20" maxlength="12" /></td>
-            </tr>
-        </table>    
+            <table>
+                <tr>
+                    <td><label for="user_id">아이디</label></td>
+                    <td><input type="text" name="user_id" id="user_id" size="20" maxlength="5" 
+                        placeholder="id 입력" /></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" name="pwd" size="20" maxlength="12" /></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="name" size="20" maxlength="5" /> </td>
+                </tr>
+                <tr>
+                    <td>성별</td> <!-- 양자택일이 되게 -->
+                    <td><input type="radio" name="gender" id="man" value="man" check="checked" /> 
+                        <label for="man">남자</label>  <!-- 남자 글자를 눌러도 선택가능하게 --> 
+                        <input type="radio" name="gender" id="woman" value="woman" />
+                        <label for="woman">여자</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>취미</td> <!-- 중복택일이 되게 -->
+                    <td><input type="checkbox" name="hobby" id="hobby1" value="climbing" />
+                        <label for="hobby1">등산</label>
+                        <input type="checkbox" name="hobby" id="hobby2" value="traveling" />
+                        <label for="hobby2">여행</label>
+                        <input type="checkbox" name="hobby" id="hobby3" value="fishing" />
+                        <label for="hobby3">낚시</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>컴퓨터 운영체제</td>
+                    <td>
+                        <select name="OS" size="3" multiple>
+                            <option value="windows">윈도우11</option>
+                            <option value="linux">리눅스</option>
+                            <option value="solaris">솔라리스</option>
+                            <option value="mac">맥</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>웹 프로그래밍 과목(1)</td>
+                    <td>
+                        <select name="lessonOne">
+                            <option value="java">JAVA</option>
+                            <option value="jsp">JSP</option>
+                            <option value="html5">HTML5</option>
+                            <option value="jquery">jQuery</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>웹 프로그래밍 과목(2)</td>
+                    <td>
+                        <select name="lessonTwo">
+                            <optgroup label="web">  <!-- optgroup = 옵션을 묶겠다 -->
+                                <option value="html5">HTML5</option>
+                                <option value="css">CSS</option>
+                                <option value="javascript">JavaScript</option>
+                            </optgroup>
+                            <optgroup label="웹 표준">
+                                <option value="구조">구조</option>
+                                <option value="표현">표현</option>
+                                <option value="동작">동작(기능)</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>배우는 과목</td>
+                    <td> 
+                        <input type="text" name="languageData" list="language" />
+                        <datalist id="language">      <!-- 한글자만 입력해도 검색어 뜨게 하겠다 -->
+                            <option value="Java">Java</option>
+                            <option value="database">database</option>
+                            <option value="html/css/js">html/css/js</option>
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td>기타사항</td>
+                    <td><textarea rows="7" cols="30" name="exam"></textarea> </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="button" value=목록 onclick="alert('목록이동')" />   <!-- 클릭시 보여줄 내용 -->
+                        <button type="button"           onclick="alert('클릭시 보여줄 내용')">목록</button>
+                        <input type="submit" value="전송" />
+                        <input type="reset" value="취소" />   <!-- form 안에 있는 거 초기화하겠다 -->
+                    </td>
+                </tr>
+            </table>    
         </form>   
     </body>
 </html>

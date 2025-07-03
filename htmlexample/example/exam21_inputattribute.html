@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>개인 정보 입력</title>
+		<style>
+			fieldset{ width:400px; }  /*네모 박스 길이 */
+		</style>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>개인 정보 입력</legend>
+				<div>
+					<label for="name">이름</label>
+					<input type="text" name="name" id="name" 
+						   placeholder="이름을 입력하시오"
+					       required    
+						   autofocus />
+				</div>                  <!-- required : 필수 입력 조건. 입력 안 하면 안 됨 , autofocus : 페이지가 로드되자마자 자동으로 커서가 깜빡이는 상태로 이 입력칸에 들어감 -->
+				<div>
+					<label for="email">이메일</label>
+					<input type="email" name="email" id="email" 
+					       placeholder="이메일을 입력하시오"
+					       required />
+				</div>		
+				<div>
+					<label for="phone">전화</label>
+					<input type="text" name="phone" id="phone" 
+						   placeholder="전화번호를 입력하시오"
+						   required />
+				</div>
+				<div>
+					<label for="photo">파일제출</label>
+					<input type="file" name="photo" id="photo" 
+						   accept="image/gif, image/jpeg, image/png" />
+				</div>
+				<div>
+					<button type="submit">등록</button> <!--type="button"으로 하면 <필수로 입력하라>고 명령할 수 없음-->
+					<button type="reset">취소</button>
+				</div>
+			</fieldset>
+		</form>
+	</body>
+</html>

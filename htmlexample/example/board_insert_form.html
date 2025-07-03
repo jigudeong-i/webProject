@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>게시판 등록</title>
+        <style> 
+            div { 
+                width: 500px; 
+                margin: 20px auto;   /* margin(여유) : 요소의 바깥여백. auto면 가운데 정렬 */
+            } 
+            label { 
+                display: block; 
+                margin-top: 10px; 
+            }
+            input, textarea { 
+                width: 100%; 
+                padding: 8px; 
+                margin-top: 5px; 
+            }
+            button { 
+                margin-top: 15px; 
+                padding: 10px 20px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div>    <!-- div(division) 내용을 그룹으로 묶는 용도 -->
+            <h2>📌 게시글 등록</h2>
+            <form>
+                <label for="writer">작성자</label>
+                <input type="text" id="writer" name="writer" required>
+
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="content">내용</label>
+                <textarea id="content" name="content" rows="10" required></textarea> <!-- rows: 박스 높이 -->
+
+                <button type="submit">등록</button>
+                <button type="reset">초기화</button>
+            </form>
+        </div>
+    </body>
+</html>
