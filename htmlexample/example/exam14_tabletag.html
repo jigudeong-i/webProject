@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>table 태그 확인</title>
+        <style>
+            /* border-collapse: collapse 테두리 합체. 이거 안 쓰면 두껍게 나옴. 스타일 칸 자체를 삭제하고 출력해보셈 */
+            table{border-collapse:collapse; /*border-spacing: 0px;*/ width: 400px;}
+            td, th {
+                border: 1px solid black;
+            }
+            caption {caption-side:bottom;}  /*캡션위치를 테이블 밑으로*/ 
+        </style>
+    </head>
+    <body>
+        <table border = "1">
+            <caption>📖주소록</caption>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+                <th>전화</th>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>서울시 강남구 역삼동</td>
+                <td>010-1234-1234</td>
+            </tr>
+            <tr>
+                <td>김민철</td>
+                <td>부산광역시 동구 범일1동</td>
+                <td>010-4567-3234</td>
+            </tr>
+        </table>
+        <br /><br />
+
+        <table>
+            <caption>🌄산 정보</caption>
+            <tr>
+                <th>산이름</th>
+                <th>주소</th>
+                <th>전화번호</th>
+            </tr>
+            <tr>
+                <td>북한산</td>
+                <td>서울특별시 도봉구 도봉동</td>
+                <td>02-4555-3323</td>
+            </tr>
+            <tr>
+                <td>아차산</td>
+                <td>경기 구리시 아천동</td>
+                <td>02-441-2341</td>
+            </tr>
+        </table>
+    </body>
+</html>

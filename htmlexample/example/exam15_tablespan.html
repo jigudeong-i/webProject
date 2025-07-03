@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>표 - 기본 표현</title>
+		<meta charset="utf-8"/> 
+	</head>
+	<body> 
+		<h3>표의 병합 - rowspan속성</h3>
+		<table border="1"> 
+		    <tr>
+		        <td rowspan="3">아래 줄(rows)<br />셀 합치기</td> 
+		        <td>1행(row) 2열 </td>
+		    </tr>
+		    <tr> 
+		        <!-- 2행 1열 없음 --> <td>2행(row) 2열</td>
+		    </tr>
+		    <tr>
+		        <!-- 3행 1열 없음 --> <td>3행(row) 2열</td>
+		    </tr>
+		</table>
+		
+
+		<h3>표의 병합 - colspan 속성</h3>	
+		<table border="1">
+		    <tr>
+		        <td colspan="3">옆 칸(cols)의 셀 합치기</td>
+		    </tr>
+		    <tr>
+		        <td>2행 1열(col)</td> 
+		        <td>2행 2열(col)</td> 
+		        <td>2행 3열(col)</td>
+		    </tr>
+		</table>
+		
+		<h3>TV 편성표</h3>
+		<table border="1">
+			<tr>
+				<td><strong>시간</strong></td>
+				<td><strong>ABC</strong></td>
+				<td><strong>BBC</strong></td>
+				<td><strong>CNN</strong></td>
+			</tr>
+			<tr>
+				<td><strong>6pm-7pm</strong></td>
+				<td rowspan="2">영화</td>
+				<td>코미디</td>
+				<td>뉴스</td>
+			</tr>
+			<tr>
+				<td><strong>7pm-8pm</strong></td>
+				<td>스포츠</td>
+				<td>시사</td>
+			</tr>
+		</table>
+		
+		<h3>시간표</h3>
+		<table border="1">
+			<tr>
+				<td><strong>요일</strong></td>
+				<td><strong>9pm</strong></td>
+				<td><strong>10pm</strong></td>
+				<td><strong>11pm</strong></td>
+				<td><strong>12pm</strong></td>
+			</tr>
+			<tr>
+				<td><strong>월요일</strong></td>
+				<td colspan="2">영어</td>
+				<td>수학</td>
+				<td>미술</td>
+			</tr>
+			<tr>
+				<td><strong>화요일</strong></td>
+				<td colspan="3">역사</td>
+				<td>체육</td>
+			</tr>
+		</table>
+	</body>
+</html>
