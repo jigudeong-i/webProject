@@ -1,0 +1,11 @@
+body {
+    background:rgb(9, 100, 160)
+}
+h1{
+    font-size: 48px;
+    color:yellow;
+    font-style: italic;
+}
+p{
+    font-size:24px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<meta charset="UTF-8">
+	<title>그룹 선택자 예제 - 도서 알림판</title>
+	<style>
+		h2, .notice, span {      /* 클래스를 부르기 위해 온점(.) 사용 */
+			color: teal;
+			font-family: 'Nanum Gothic', sans-serif;
+		}
+		p, .info {      /* p랑 info 만났을 때 적용 */
+			font-size: 14px;
+			line-height: 1.6;
+			color: #ff4141;
+		}
+		.highlight {
+			background-color: #ffff99;
+			padding: 2px 4px;
+			border-radius: 3px;
+		}
+	</style>
+	</head>
+	<body>  
+		<div class="notice">📢 도서관 공지</div>   <!-- div 요소에 notice라는 클래스 이름을 붙임. 나중에 css 스타일 지정, javascript로 선택 할 때 이 이름을 사용. -->
+		<section>
+			<h2>📚 신간 입고 도서</h2>
+			<p class="info">다음 도서가 새로 입고되었습니다:</p>
+			<p>
+				<span class="highlight">자바 프로그래밍 </span> - 박은종 저
+			</p>
+			<p>
+				<span class="highlight">모던 자바스크립트 & Node.js </span> - 이창현 저
+			</p>
+		</section>
+		<section>
+			<h2>🕒 대출 마감 임박 도서</h2>
+			<p class="info">아래 도서는 연체가 우려되니 반납해주세요:</p>
+			<p>
+				<span class="highlight">혼자 공부하는 파이썬</span> - 윤인성 저
+			</p>
+			<p>
+				<span class="highlight">Do it! HTML+CSS+JS</span> - 고경희 저
+			</p>
+		</section>
+	</body>
+</html>

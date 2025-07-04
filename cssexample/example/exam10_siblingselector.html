@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>형제 선택자 예제 - 레시피</title>
+  
+    <style>
+        h2 ~ div {              /* 형제 선택 : h2 뒤에 있는 div에 모두 적용 */
+        background-color: #fffae6;
+        padding: 2px 4px;
+        }
+
+        h2 + p {                /* 인접 형제 선택 : h2 바로 뒤에 있는 p에 적용 */
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        p + div:hover{          /* p 바로 뒤에 있는 div에 적용 */
+            color: rgb(71, 187, 255);
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>🍲 오늘의 레시피</h1>
+
+        <h2>1. 재료 준비</h2>
+        <p>감자, 당근, 양파, 소금, 후추</p>
+        <div>Tip: 감자는 껍질을 벗겨주세요</div>
+        <div>Tip: 당근은 얇게 썰어주세요</div>
+
+        <h2>2. 재료 손질</h2>
+        <p>모든 재료를 깍둑썰기 해 주세요</p>
+        <div>Tip: 양파 눈물이 나지 않도록 찬물에 담궈두세요</div>
+        <span>
+            <div>재료를 가로, 세로, 높이를 같게 하여 네모지게 썰어주면 됩니다.</div>
+        </span>
+
+        <h2>3. 요리 완료</h2>
+        <p>모든 재료를 볶아 잘 익힌 후 따뜻하게 제공하세요.</p>
+        <div>Tip: 기호에 따라 파슬리를 뿌려도 좋아요</div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>선택자의 우선 순위</title>
+        <style type="text/css">
+            p{
+                font-size: 25px;
+                font-weight: bold;
+                color: #8041D9;
+            }
+            .text{
+                font-size: 15px;
+                font-family: 휴먼옛체, 맑은고딕; 
+                color:rgb(255,0,121);
+            }
+
+            #font{
+                font-size: 35px;
+                font-family: "Times New Roman", "Comic Sans MS";
+                color:gray; 
+            }
+
+            .jiwon{
+                background-color: aqua;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <h1>[CSS를 이용한 폰트]</h1>                    <!-- id는 유일값, class는 중복허용 -->
+        <p class="text" id="font">Good Morning</p>   <!-- id가 class보다 나중에 선언됐으므로 우선됐다. -->
+        <p class="text jiwon">안녕하세요</p>            <!-- class는 중복해서 적용 가능 -->
+        <p class="text" id="font" style="color:red; font-size:50px;">Good Morning</p>
+        <p>안녕하세요</p>
+        <span class="text" id="font">안녕하세요</span>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>속성 선택자 도서 목록</title>
+		<style>
+			div[class^="book"] {      /* ^= (~로 시작하는 것) */ 
+				font-weight: bold;
+				margin: 10px 0;
+				color: darkblue;
+			}
+			a[href$=".pdf"] {      /* $= (~로 끝나는 것), href(hyperlink references):링크 주소 */
+				background: url('pdf_icon.png') center right no-repeat; /* 배경으로 색이 아닌 이미지를 줄 수도 있음 */
+				padding-right: 25px;
+				color: crimson;
+			}
+			a[href$=".epub"] {
+				background: url('epub_icon.png') center right no-repeat;
+				padding-right: 25px;
+				color: green;
+			}
+			a[target="_blank"] {
+				font-style: italic;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>📘 도서 목록</h2>
+
+		<div class="book_korean">
+			📖 자바 프로그래밍 - 박은종 저
+			<br />
+			<a href="books/java.pdf" target="_blank">PDF 다운로드</a>
+		</div>
+		<div class="book_foreign">
+			📖 Clean Code - Robert C. Martin 저
+			<br />
+			<a href="books/clean.epub" target="_blank">EPUB 다운로드</a>
+		</div>
+		<div class="book_korean">
+			📖 모던 자바스크립트 & Node.js - 이창현 저
+			<br />
+			<a href="books/js.pdf">PDF 다운로드</a>
+		</div>
+		<div class="book_foreign">
+			📖 오라클로 배우는 SQL - 이지훈
+			<br />
+			<a href="books/sql.epub" target="_blank">EPUB 다운로드</a>
+		</div>
+	</body>
+</html>

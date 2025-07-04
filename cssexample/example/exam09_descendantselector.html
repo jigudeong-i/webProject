@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>영화 정보 - 하위 선택자와 자식 선택자 예제</title>
+        <style>
+            div#movieSection h3{
+                color: darkgreen;
+            }
+            div#recommend > h3{
+                color: darkorange
+            }
+        </style>
+    </head>
+    <body>
+        <div id="movieSection">
+            <h3>최신 영화</h3>
+            <div>
+                <h3> 슈퍼맨 </h3>
+                <p>감독: 제임스 건 | 장르: 액션, 어드벤쳐</p>
+            </div>
+        </div>
+
+        <div id="recommend">      <!-- 얘 입장에서 추천영화는 자식, 더무비는 후손 (자식과 후손은 div 기준으로) -->
+            <h3>추천 영화</h3>
+            <div>
+                <h3> <더 무비> </h3>
+                <p>감독: 조셉 코신스키 | 장르: 드라마, 액션</p>    
+            </div>
+        </div>
+    </body>
+</html>
