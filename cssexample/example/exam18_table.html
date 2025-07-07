@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>테이블 스타일 속성</title>
+		<style type="text/css">
+			table {
+				width: 600px;
+				margin: 20px auto;
+				border: 2px solid #333;
+			}
+
+			table:nth-child(1){
+				/* 셀 테두리 통합(collapse) 또는 분리(separate) */
+				border-collapse: collapse;
+				
+				/* 셀 너비 고정(fixed) 또는 내용 기반(auto) */
+				table-layout: fixed;
+			}
+			table:nth-child(1) th{
+				font-size: 1.4em;
+			}
+
+			table:nth-child(2){
+				border-collapse: separate;
+				/* 셀 사이 간격 (separate일 경우 작동) */
+				/* border-spacing: 0px; */
+			}
+			caption {
+				font-size: 1.2em;
+				font-weight: bold;
+				/* 캡션 위치: top(기본값) 또는 bottom */
+				caption-side: bottom;
+			}
+			th, td {
+				border: 1px solid #666;
+				padding: 8px;
+				text-align: center;
+
+				/* 빈 셀 보이기(show) 또는 숨기기(hide) */
+				empty-cells: show;
+
+				/* 셀 안의 내용 기준 수직 정렬 */
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<caption>산정보</caption>
+			<tr>
+				<th>산이름</th>
+				<th>주소</th>
+				<th>전화번호</th>
+			</tr>
+			<tr>
+				<td>북한산</td>
+				<td>경기 고양시 덕양구 대서문길 375</td>
+				<td>02-909-0497</td>
+			</tr>
+			<tr>
+				<td>도봉산</td>
+				<td>서울특별시 도봉구 도봉동</td>
+				<td>02-954-2566</td>
+			</tr>
+			<tr>
+				<td>아차산</td>
+				<td>경기 구리시 아천동</td>
+				<td>02-450-1395</td>
+			</tr>
+		</table>
+
+		<table>
+			<caption>산정보</caption>
+			<tr>
+				<th>산이름</th>
+				<th>주소</th>
+				<th>전화번호</th>
+			</tr>
+			<tr>
+				<td>북한산</td>
+				<td>경기 고양시 덕양구 대서문길 375</td>
+				<td>02-909-0497</td>
+			</tr>
+			<tr>
+				<td>도봉산</td>
+				<td>서울특별시 도봉구 도봉동</td>
+				<td>02-954-2566</td>
+			</tr>
+			<tr>
+				<td>아차산</td>
+				<td>경기 구리시 아천동</td>
+				<td>02-450-1395</td>
+			</tr>
+			<tr>
+				<td>속리산</td>
+				<td>충청북도 보은군 속리산면 법주사로 84</td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>

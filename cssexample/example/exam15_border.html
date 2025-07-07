@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>확장된 테두리 스타일 예제</title>
+		<style>
+			body {
+				background-color: #FAED7D;
+				font-family: 'Nanum Gothic', sans-serif;
+				padding: 20px;
+			}
+			.container {
+				display: flex;
+				flex-direction: row;
+			}
+			.box {
+  				display: flex;              /* 내부를 Flex 컨테이너로 */
+  				align-items: center;        /* 세로 중앙 정렬 */
+  				justify-content: center;    /* 가로 중앙 정렬 */
+
+				width: 70px;
+				height: 70px;
+				margin: 5px;
+				background-color: white;
+				color: black;
+				font-size: 12px;
+			}
+
+			.none    { border: 2px none black; }
+			.solid   { border: 2px solid black; }
+			.dotted  { border: 2px dotted black; }
+			.dashed  { border: 2px dashed black; }
+			.double  { border: 4px double black; }
+
+    		.combo {
+				border-top:1px solid #0088dd; 
+				border-bottom:1px solid #0088dd;
+			}
+			.rounded {
+				border:1px solid #0088dd; 
+				/*border-radius:8px;  */
+				border-top-left-radius:8px; 
+				border-top-right-radius:8px;
+			}
+
+			img{
+		  		border:2px solid black;
+		  		border-radius:10px;
+		  	}
+			p img{
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>테두리 스타일 모음</h2>
+		<div class="container">
+			<div class="box none">none</div>
+			<div class="box solid">solid</div>
+			<div class="box dotted">dotted</div>
+			<div class="box dashed">dashed</div>
+			<div class="box double">double</div>
+			<div class="box combo">combo</div>
+			<div class="box rounded">round</div>
+		</div>
+		<img src="../image/image1.jpg" />
+		<img src="../image/image2.jpg" />
+		<img src="../image/image3.jpg" />
+		<p>
+			<img src="../image/bear.jpg" />
+		</p>
+	</body>
+</html>

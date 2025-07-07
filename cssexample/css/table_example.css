@@ -1,0 +1,36 @@
+
+table{
+    width:600px;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: center;
+} 
+table > caption{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+table td, table th{
+    padding: 8px 5px;
+    border: 1px solid #ccc;
+}
+
+.blue{
+    color: white;
+    background-color: #43cdff;
+}
+
+.green{
+    color: white;
+    background-color: #81d733;
+}
+
+.yellow{
+    color: white;
+    background: yellow;
+}
+
+.orange{
+    color: white;
+    background: orange;
+}

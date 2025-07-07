@@ -1,0 +1,39 @@
+body{
+    background-color: #f0f0f0;
+    margin: 25px;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.title{
+    text-align: center;     /* 텍스트 정렬 */
+    width: 640;
+    margin: 0 auto 20px;      /* 좌우를 자동으로 잡겠다 */
+}
+.gallery{
+    width: 640px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+.gallery li{      /* gallery 안에 li */
+    float: left;
+    width: 280px;
+    margin: 0 15px 20px; 
+    background-color: #fff;
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.3),    /* a: 알파값(투명도) */
+        0 0 8px rgba(0,0,0,0.1);
+}
+.gallery li:hover{
+    box-shadow: 0 8px 16px rgba(136, 32, 32, 0.14);
+}
+.gallery img{
+    width: 100%;
+    height: 230px;
+    display: block;
+}
+.gallery figcaption{
+    margin: 10px 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 1em;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>padding 속성 확인</title>
+        <style>
+            div{
+                border: 2px solid teal;
+            }
+            div.in-spacing{
+                /* top/right/bottom/left 모두 같은 */
+                padding:20px;
+
+                /*
+                padding:50px 20pxl
+                padidng-top: 50px;
+                padding-right: 20px;
+                padding-bottom: 50px;
+                padding-left: 20px;
+                */
+            }
+        </style>
+    </head>
+    <body>
+        <div>padding 속성을 설정하지 않은 요소</div>
+        <br /><br />
+        <div class="in-spacing">padding 속성값을 방향별로 따로 설정한 요소</div>
+    </body>
+</html>
