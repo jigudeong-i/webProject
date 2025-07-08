@@ -1,12 +1,12 @@
 body{
     background-color: #f0f0f0;
-    margin: 25px;
+    margin: 200px;
     font-family: 'Nanum Gothic', sans-serif;
 }
 .title{
     text-align: center;     /* 텍스트 정렬 */
     width: 640;
-    margin: 0 auto 20px;      /* 좌우를 자동으로 잡겠다 */
+    margin: 0 auto 20px;    /* 위, 좌우, 아래 순서. 좌우를 자동으로 잡겠다. */
 }
 .gallery{
     width: 640px;

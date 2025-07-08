@@ -1,31 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
-        <title>gallery</title>
+        <title>gallery practice</title>
         <style>
             body{
-                background-color: antiquewhite;
-                padding: 50px;
-            }
-            .resize{
-                width: 400px;
-                height: auto;  /*비율유지*/
-            }
-            .selector{
-                text-align: center;
+                background-color: rgb(63, 30, 0);
+                margin: 0 300 200px;   /* 상, 좌우, 하 */
             }
 
+            .gallery{
+                width: 600px;
+                height: 200px;
+                list-style : none;
+            }
+            
+            .gallery li{
+                width: 600px;
+                height: 200px;
+                list-style-type: circle;
+            }
+
+            .selector{
+                color: azure;
+                text-align: center;
+            }
         </style>
     </head>
+    
     <body>
-        <div class="picture" position="middle">
-            <h1 class="selector">PICTURE GALLERY</h1>
-            <img src="../image/capyzou1.png" width="300"/>
-            <img src="../image/cat.gif" />
-            <img src="../image/guitar-bg.jpg" class="resize" />
-            <img src="../image/photo.jpg" />
-            <img src="../image/bg4.jpg" />
+        <div class="title" position="middle">
+            <h1 class="selector">내가 모은 사진들</h1>
         </div>
+        <ul class="gallery">
+            <li>
+                <img src="../image/capyzou1.png" alt="카피바라">
+                <figcaption>귀여운 카피바라</figcaption>
+            </li>
+            <li>
+                <img src="../image/cat.gif" alt="고양이"/>
+                <figcaption>새벽감성 고양이</figcaption> 
+            </li>
+            <li>
+                <img src="../image/guitar-bg.jpg" alt="기타"/>
+                <figcaption>시크한 기타</figcaption>
+            </li>
+            <li>
+                <img src="../image/photo.jpg" alt="이끼"/>
+                <figcaption>작고 소중한 이끼</figcaption>
+            </li>    
+            <li>
+                <img src="../image/bg4.jpg" alt="사랑"/> 
+                <figcaption>사랑 장식품</figcaption>
+            </li>
+        </ul>
     </body>
 </html>
