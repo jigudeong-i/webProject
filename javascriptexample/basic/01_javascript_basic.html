@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    <title>01_자바스크립트 개요 - 01_javascript_basic.html</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        #heading{
+            color:blue;
+        }
+        #text{
+            color:gray;
+            font-size:15px;
+        }
+        
+    </style>
+    <script src="../js/01_javascript_basic.js"></script>
+
+</head>
+<body>
+    <h1>JavaScript 개요</h1>
+    <h3>스크립트(script) 언어</h3>
+    <pre>
+    기본 프로그램의 동작을 사용자의 요구에 맞게 수행되도록 해주는 용도의 언어
+
+    별도로 소스코드를 컴파일하지 않고 
+    인터프리터(interpreter)를 이용하여 소스코드를 한 줄씩 읽어 바로 실행
+    </pre>
+
+    <h3>자바스크립트(JS)란?</h3>
+    <pre>
+    웹 브라우저에서 많이 사용하는 인터프리터 방식의 객체 지향 프로그래밍 언어
+    </pre>
+    <hr />
+
+    <hr2>자바스크립트 작성 방법</hr2>
+    <ul>
+        <li>브라우저 콘솔에 직접 작성</li>
+        <li>html 내부에 script 태그를 이용해서 작성 </li>
+        <li>html 외부에 (.js)파일을 이용해서 작성(external)</li>
+        <li>태그에 직접 JS코드를 작성(inline)</li>
+    </ul>
+
+
+
+
+    <h2> 1) inline 방식(인라인)</h2>
+    <pre>
+        태그 내에 간단 소스코드를 작성해서 실행되게 하는 방법
+        [표현법] &lt;태그 on이벤트명 = 해당 요소에 해당이벤트 발생 시 실행할 소스코드"&gt;
+    </pre>
+    <!-- JS는 ""/'' 둘다 문자열 리터럴 표기법으로 인식됨 -->
+    <button type="button" onclick="window.alert('인라인 알림창 출력!!')">알림창 출력</button>  <!-- window는 최상위 클래스이기 때문에 생략해도 된다. -->
+    <button type="button" onclick="console.log('인라인 콘솔 출력!!')">콘솔 출력</button> <!-- 버튼 누르고 개발자 도구 띄워서 콘솔 창에서 확인 -->
+
+    
+
+
+
+    <h2> 2) internal 방식(내부)</h2>
+    <pre>
+        현재 html문서내 script태그 영역안에 소스코드 작성
+        script태그는 head태그든, body태그든 다 작성 가능
+    </pre>
+    <!-- 버튼이 클릭되었을 때 btnClick() 함수를 호출 -->
+    <button type="button" onclick="btnClick1()">알림창 출력</button>
+    <h1 id="heading">자바스크립트</h1>
+    <p id="text">위 제목을 클릭해 주세요~~</p>
+    <script>
+        function btnClick1(){
+            window.alert("내부 알림창 출력 버튼!!")
+        }
+        let leg = document.querySelector("#heading");  // documnet.querySelector : 현재 문서에서 css에서 선택자를 찾겠다. 즉, heading. 즉, h1. 선택한 요소를 변수 heading에 저장하겠다.
+        leg.onclick = function(){        // 익명 함수. 값을 임의로 줌.
+            leg.style.color = "red";
+            leg.style.backgroundColor = "black";
+            leg.innerHTML = "오늘도 고생하셨습니다~~";
+        };
+    </script>
+
+
+
+
+
+    <h2> 3) external 방식(외부)</h2>
+    <pre>
+        별도의 .js파일로 소스코드를 작성해서 가져다가 사용하는 방법 
+    </pre>
+    
+    <!-- external 방식은 js파일을 연결해야 사용 가능(head, body태그 어디든 작성 가능) -->
+    <button type="button" onclick="btnClick2()">external 방식</button>
+    <hr /> 
+
+    <h3>JavaScript 테스트</h3>
+    <div id="box"></div>
+
+    <button type="button" onclick="changeColor1()">red</button>
+    <button type="button" onclick="changeColor2()">yellow</button>
+
+
+
+
+
+    <script>
+        const myArrays=[1,2,3,4,5,6,7,8];        // const: 상수선언 키워드.
+        
+        // 명령형 프로그래밍 (Imperative Programming)
+        let evenNum = [];                        // let: 변수선언 키워드. 자바스크립트는 비어있는 배열을 줄 수 있다. 
+        for(let i=0; i<myArrays.length; i++){   
+            if (myArrays[i] % 2==0){
+                evenNum.push(myArrays[i]);       // 아까 만든 비어있는 배열에다가 넣겠다(push). 
+            }
+        }
+
+        // 선언형 프로그래밍 (Declarative Programming)
+        let evenNum2 = myArrays.filter((value) => value % 2 == 0);  // 짝수만 필터링하겠다. 값이 여러개 들어갈 거니까 이것도 배열.          
+        console.log('명령형 프로그래밍', evenNum);
+        console.log('선언형 프로그래밍', evenNum2);
+    </script>
+
+</body>
+</html>

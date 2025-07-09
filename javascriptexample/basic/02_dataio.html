@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>02_데이터입출력 - 02_dataio.html</title>
+        <style>
+            .box{ 
+                border: 1px solid black;
+            }
+            .box1{
+                color:orange;
+                border:1px solid #000;
+                border-radius: 10px;
+                background-color: gray;
+                padding:10px;
+                width:400px;
+            }
+            label{
+                display: inline-block;
+                width: 80px;
+            }
+            .box2{
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+<body>
+    <h1>자바스크립트에서의 데이터 입/출력</h1>
+    <!-- 
+        * window: 자바스크립트의 내장 객체로, 브라우저 창이 열릴 때마다 하나씩 생성된다.
+        브라우저 창 안에 존재하는 모든 요소들의 최상위 객체이며, 대부분의 경우 생략이 가능하다.
+
+        * document: 웹 문서마다 하나씩 생성되는 객체로, HTML 문서에 대한 구조와 내용을 다루는 데 사용된다.
+    -->
+ 
+
+
+
+
+
+
+
+    <h2> 1. 데이터 출력하는 구문</h2>
+    <pre>
+        1) [window.]alert("알림창에 출력할 문구");
+        2) console.log("콘솔창에 출력할 문구");
+        3) document.write("화면상에 출력할 문구");
+        4) 선택한요소.innerText = "요소에 출력할 문구";
+        5) 선택한요소.innerHTML = "요소에 출력할 문구";
+    </pre>
+    <hr />
+
+            <h3>1) window.alert("내용")</h3>
+            <pre>
+            - alert("메시지");
+            - window 객체의 메서드로, window. 생략 가능하며, 브라우저에서 경고창(알림창)을 띄우는 메서드이다-.
+            - 사용자에게 정보를 전달할 때 사용된다.
+            </pre>
+            <!-- 클릭시 "alert 버튼 클림됨" 대화상자 출력 -->
+            <button type="button" onclick="fnAlert()">alert 확인</button>
+            <hr />
+
+
+
+            <h3>2) console.log("콘솔창에 출력할 문구");</h3>
+            <script>
+                const names = ['홍길동', '김철수', '이희진'];
+
+                console.log('메시지 출력', names);
+                // console.table(names);
+                console.warn('경고 메시지');
+                console.error('에러 메시지');
+            </script>
+            <hr />
+
+
+
+            <h3>3) document.write("내용")</h3>
+            <button type="button" onclick="documentWrite()">화면에 출력</button>
+            <hr />
+
+
+
+            <h3>4) innerText</h3>
+            <pre>
+            요소에 작성된 "텍스트 내용"을 읽거나 변경할 때 사용하는 속성.
+            - 내용을 읽을 때: HTML 태그는 무시되고, 순수한 텍스트만 반환.
+            - 내용을 변경할 때: 입력한 문자열이 그대로 출력되며, 포함된 태그는 문자 그대로 표시된다 (태그 해석 ×).
+            </pre>
+            <button type="button" onclick="getInnerText()">innerText로 읽어오기</button>
+            <button type="button" onclick="setInnerText()">innerText로 변경하기</button>
+            <p id="test1" class="box">
+                테스트1 입니다.
+                <br />
+                <strong>안녕하세요?</strong>
+            </p>
+            <hr />
+
+
+
+            <h3>5) innerHTML</h3>
+            <pre>
+            HTML 요소의 내용을 포함한 전체 구조(태그 + 속성 + 내용)를 읽거나 변경할 수 있는 속성.
+            - 값을 읽을 때: 태그와 속성을 포함한 HTML 코드를 반환.
+            - 값을 변경할 때: 문자열로 작성된 HTML 코드를 실제 요소로 해석하여 브라우저에 표시한다.
+            - 태그가 HTML로 해석되므로 동적으로 구조를 추가하거나 변경할 때 자주 사용된다.
+            </pre>
+            <button type="button" onclick="getInnerHTML1()">innerHTML로 읽어오기</button>
+            <button type="button" onclick="setInnerHTML1()">innerHTML로 변경하기</button>
+            <p id="test2" class="box">
+                테스트 2 입니다.
+                <br />
+                <strong>반가워요?</strong>
+            </p>
+            <hr />
+
+
+
+            <h3>innerHTML 예제</h3>
+            <h1 id="title">시간은 돈으로 살 수 없다.</h1> 
+            <button type="button" onclick="print()">h1 태그 출력</button>
+            <hr />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>2. 데이터 입력받는 구문 (변수저장)</h2>
+    <pre>
+        1) 변수 = [window.]confirm("요구사항");
+        2) 변수 = [window.]prompt("요구사항");
+        3) 변수 = 선택한요소.속성(className, innerHTML, innerText, ...);
+        4) 변수 = 선택한input요소.value;
+    </pre>
+
+
+            <h3>1) confirm("내용")</h3>
+            <pre>
+                사용자에게 "예" / "아니오" 결과를 얻고자 할 때 사용
+                [반환값]
+                - 확인 버튼 클릭시 true 반환
+                - 취소 버튼 클릭시 false 반환
+            </pre>
+            <button type="button" id="confirmBtn" onclick="fnConfirm()">confirm 확인하기</button>
+            <hr />
+
+
+
+            
+            <h3> 2) window.prompt("내용",["초깃값"])</h3>
+            <pre>
+                - 텍스트를 작성할 수 있는 대화상자
+                - 확인 : 입력한 값 반환(문자열)
+                - 취소 : null 반환
+            </pre>
+            <button type="button" onclick="fnPrompt1()">클릭</button>
+            <div id="area2"></div>
+            <br />
+            <button type="button" onclick="fnPrompt2()">확인하기</button>
+            <p id="area3"></p>
+            <hr />
+
+
+
+
+            <h3> 4) 선택한input요소.value</h3>
+
+            <label for="userId">아이디 : </label>
+            <input type="text" id="userId"> <br />
+            <label for="userPwd">비밀번호 : </label>
+            <input type="password" id="userPwd"> <br />
+
+            <button type="button" onclick="fnInput()">클릭</button><br />
+            <label for="result">결과 : </label>
+            <input type="text" id="result">
+
+
+
+
+            <h3>value 예제 - 입력받은 값 변경</h3>
+            <input type="text" id="number1" /><br />
+            <button type="button" onclick="fnChange()">change</button><br />
+            <input type="text" id="number2" />  
+
+            <h3>이름 입력받아 출력</h3>
+            <input type="text" id="name" /><br />
+            <button type="button" id="btn" "click()">이름 출력</button><br />
+            <div id="namePrint">입력하신 이름은 다음과 같습니다. </div>
+
+    <script src="../js/02_dataio.js"></script>
+</body>
+</html>
