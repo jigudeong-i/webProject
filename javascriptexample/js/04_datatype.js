@@ -4,6 +4,8 @@ var number = "자바스크립트"; // var는 같은 이름으로 변수 재선�
 console.log(number);        
 console.log("----------------");
 
+
+
 // 2-1. 선언 전에 변수가 사용되었을 때
 console.log(number1); // 호이스팅 발생: 바로 아래 number1 선언만 위로 올라가고, 값은 위로 올라가지 않음.
 var number1 = 30;
@@ -16,6 +18,8 @@ var number2;
 console.log(number2); 
 console.log("----------------");
 
+
+
 // 3. for문 초기화식에서 var 변수 사용
 console.log(i); // i는 아래에서 var로 선언되므로 호이스팅됨
 for (var i = 0; i < 3; i++) {
@@ -24,6 +28,8 @@ for (var i = 0; i < 3; i++) {
 i = 0; 
 console.log("----------------");
 
+
+
 //4. 변수 재사용 
 var i;
 console.log(i);  // 0 (앞에서 i=0 으로 설정됨)
@@ -31,6 +37,8 @@ for (i = 0; i < 3; i++) {
     console.log("Test_1 i = " + i);
 }
 console.log("----------------");
+
+
 
 // 5. 조건문
 console.log(num) 
@@ -43,6 +51,8 @@ if(num !== 10) {
 console.log("num= " + num); 
 console.log("----------------");
 
+
+
 //6. 함수 스코프 vs 암묵적 전역 변수
 function test(){
     var number3 = 3; 
@@ -52,14 +62,13 @@ function test(){
         var number5 = 5; 
         number6 = 6; // 암묵적 전역 변수
     }
-
+    
     console.log("number5 : " + number5); // 함수 내부에서 사용 가능
 }
 test();
 
 //console.log("number3 : " + number3); // 결과? 
 console.log("number4 : " + number4); 
-
 
 // console.log("number5 : " + number5); //결과?
 console.log("number6 : " + number6); 
@@ -129,7 +138,6 @@ function typeTest(){
     // 아래 tempFn이 선언되어 있어야 오류가 나지 않습니다
     typeBox.innerHTML += `<br />tempFn(30, sumFn) : ${tempFn(30, sumFn)}`;
 }
-
 
 function tempFn(n3, fn){ //fn = function(n1, n2){ return n1 + n2; }
     return n3 + fn(10, 20);
