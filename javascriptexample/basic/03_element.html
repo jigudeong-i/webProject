@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>03_요소 접근 방법 - 03_element.html</title>
+        <link rel="stylesheet" href="../css/03_element.css" />
+    </head>
+    <body>
+        <h1>DOM (Document Object Model)</h1>
+        <pre>
+            웹 문서(HTML)의 모든 요소를 객체 형식으로 표현한 구조
+            -> 자바 스크립트를 통해 문서 내 특정 요소를 조작하거나 접근할 수 있게 함 
+        </pre>
+        <hr />
+
+        <h1>DOM을 이용한 HTML 요소 접근 방법 (요소 객체 가져오기)</h1>
+        <pre>
+            1. id로 접근하기
+            document.getElmentById("id속성값");
+
+            2. name으로 접근하기 (복수 요소 반환)
+            document.getElementsByName("name속성값");
+
+            3. class로 접근하기 (복수 요소 반환)
+            document.getElementsByClassName("class속성값");
+
+            4. 태그명으로 접근하기 (복수 요소 반환)
+            document.getElementsByTagName("태그명");
+
+            5. CSS 선택자로 접근하기
+            
+            1) 단일 요소 접근
+                document.querySelector("CSS 선택자");
+                -> 선택된 요소가 여러 개인 경우 첫 번쨰 요소만 반환
+
+            2) 복수 요소 접근
+                document.querySelectorAll("CSS 선택자");
+                ->선택된 모든 요소를 NodeList 형태로 반환
+        </pre>
+
+
+
+
+        <h3>id로 접근하기</h3>
+        <button type="button" onclick="accessId()">클릭할 때 마다 배경색 변경</button>
+        <div id="div1" class="area"></div>
+        <hr />
+
+
+
+
+
+
+
+        <h3> class로 접근하기</h3>
+        <div class="area div2"></div>
+        <div class="area div2"></div>
+        <div class="area div2"></div>
+        <button type="button" onclick="accessClass()">배경색 변경하기</button>
+        <hr />
+
+
+
+
+
+
+
+        <h3> 태그명으로 접근하기</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <button type="button" onclick="accessTagName()">배경색 변경</button>
+        <hr />
+
+
+
+
+
+        <h1>input 태그의 값(value) 얻어오기/변경하기</h1>
+        <input type="text" id="input-test">
+        <button onclick="inputTest()">입력</button>
+        <hr />
+
+
+
+
+
+
+
+        <h3>name으로 접근하기</h3>
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" name="hobby" id="game" value="게임">
+                    <label for="game">게임</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="hobby" id="music" value="음악감상">
+                    <labe for="music">음악감상</labe>          
+               </td>
+               <td>
+                    <input type="checkbox" name="hobby" id="movie" value="영화감상">
+                    <labe for="music">영화감상</labe>  
+               </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="hobby" id="coding" value="코딩">
+                    <labe for="music">코딩</labe>  
+               </td>
+               <td>
+                    <input type="checkbox" name="hobby" id="exercise" value="운동">
+                    <labe for="music">운동</labe>  
+               </td>
+               <td>
+                    <input type="checkbox" name="hobby" id="book" value="독서">
+                    <labe for="music">독서</labe>  
+               </td>
+            </tr>
+        </table>
+        <div class="area" id="name-div"></div>
+        <button type="button" onclick="accessName()">출력하기</button>
+        <hr />
+
+
+
+
+        <h3>CSS 선택자로 접근하기</h3>
+        <div id="css-div">
+            <div class="area">test1</div>
+            <div class="area">test2</div>
+        </div>
+        <button type="button" onclick="accessCss()">확인하기</button>
+        <hr />
+
+
+
+
+
+        <h3>간단한 카카오톡 채팅 화면 만들기</h3>
+        <div id="chatting-bg">
+            <p> <span>추가 입력 </span></p>
+            <p> <span>입력되는 채팅 출력</span></p>
+            <p> <span>입력되는 채팅 출력</span></p>
+        </div>
+
+        <!-- onkeydown : 키가 눌러졌을 때 -->
+        <!-- onkeypress : 키가 눌러지고 있을 때 -->
+        <!-- 쭉 누르고 있을 경우 부문별한 함수 호출이 발생 -->
+
+        <input type="text" id="chatting-input" onkeyup="inputEnter(event)">
+        <button type="button" onclick="readValue()">입력</button>
+
+        <script src="../js/03_element.js"></script>
+    </body>
+</html>

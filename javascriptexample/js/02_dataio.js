@@ -136,9 +136,23 @@ function fnInput(){
 }
 
 
+
 function fnChange(){
     const input = document.getElementById("number1").value;
     document.getElementById("number1").value = document.getElementById("number2").value
     document.getElementById("number2").value = input; 
 }
+
+
+
+// document.getElementById("btn").onclick = function(){
+//       document.getElementById("namePrint").innerHTML = document.getElementById("name").value; 
+// }
+    
+document.getElementById("btn").onclick = function(){
+    const nameValue = document.getElementById("name").value;
+    document.getElementById("namePrint").innerHTML = nameValue? `${nameValue}님 반갑습니다~.` : "이름을 입력해주세요.";
+}
+
+
 
