@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>콜백함수 - 06_callback.html</title>
+        <script>
+            /* 자바스크립트에서는 함수를 매개변수로 전달할 수 있는데,
+            이를 콜백 함수라고 한다. */
+
+            function sum(x, y, callback){
+                let result = x + y;
+                callback();
+                return result;
+            }
+
+            //콜백 함수
+            let result = sum(10, 20, function(){
+                alert("연산 작업");
+            });
+
+            document.write("result=" + result);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

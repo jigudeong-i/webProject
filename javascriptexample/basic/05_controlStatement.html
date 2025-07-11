@@ -4,9 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="../css/05_controlStatement.css" />
+        
     </head>
     <body>
-        <h2>성적 구하기</h2>
+        <h2>요구사항 1 - 성적 구하기</h2>
         <input type="text" name="kor" id=kor placeholder= "국어점수(kor)">  <!-- 서버에 전송하려면 name도 필요하다 -->
         <input type="text" name="eng" id=eng placeholder= "영어점수(eng)">
         <input type="text" name="math" id=math placeholder= "수학점수(math)">
@@ -17,24 +19,48 @@
         <input type="text" id=grade placeholder= "학점" readonly>
 
 
-        <h2>숫자 맞추기 게임</h2>
-        <p>이 게임은 컴퓨터가 무작위로 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 10 사이의 정수입니다.</p>
-        <input type="text" id=num>
-      
 
 
-        <h2>간단한 반복문 실습</h2>
-        <p>1. 반복문을 사용하여 h1~h6 태그로 Hello JavaScript를 출력해 주세요.</p>
-        <p>2. 반복문을 사용하여 이미지를 출력해 주세요.</p>
-        <button onclick="button1()">출력</button>
-        <div id="typebox"></div>
+        <div>
+            <h2>요구사항 2 - 숫자 맞추기 게임</h2>
+            <p>이 게임은 컴퓨터가 무작위로 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 10 사이의 정수입니다.</p>
+            <code>[참고] 1~10 사이의 난수 생성: Math.floor(Math.random() * 10) + 1;</code>
+            <form>
+                <div class="number">
+                    <label>숫자:</label>
+                    <input type="text" id="user" name="user" />
+                    <input type="button" value="확인" onclick="guess()" />
+                </div>
+                <div> 
+                    <label>추측횟수:</label>
+                    <input type="text" id="guesses" name="guesses" readonly="readonly" />
+                    <label>힌트:</label>
+                    <input type="text" id="result" name="result" readonly="readonly" />
+                </div>
+            </form>
+        </div>
 
 
 
 
+        <div>
+            <h2>요구사항 3 - 간단한 반복문 실습</h2>
+            <code>
+                1. 반복문을 사용하여 h1~h6 태그로 Hello JavaScript를 출력해 주세요.
+                2. 반복문을 사용하여 이미지를 출력해 주세요.
+            </code>
+            <button type="button" onclick="print()">출력</button>
+            <div id="hprint"></div>
+            <div id="imgprint"></div>
+        </div>
 
 
 
+        <div>
+            <h3>요구사항 4 - 구구단 출력</h3>
+            <button type="button" onclick="gugudanPrint()">출력</button>  
+            <div id="gugudan"></div>
+        </div>
 
         <script src="../js/05_controlStatement.js"></script> 
     </body>

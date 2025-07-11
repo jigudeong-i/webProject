@@ -1,0 +1,23 @@
+#gugudan {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 15px;
+}
+#gugudan table { 
+    border-collapse: collapse;
+    border:1px solid #ccc;
+}
+#gugudan th {
+    border:1px solid #ccc;
+    border-collapse:collapse;
+}
+#gugudan th, #gugudan td { 
+    padding:10px 15px;
+}
+#gugudan th { 
+    background:#eee;
+}		
+#gugudan td { 
+    border:1px dotted #222;
+}

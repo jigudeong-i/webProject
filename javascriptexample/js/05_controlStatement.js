@@ -30,7 +30,8 @@ function input(){
     document.getElementById("grade").value = grade;
 }
 
-    /*switch (Math.floor(avg/10)){  // Math.floor() 소수점 버림
+    /*방법 2
+    switch (Math.floor(avg/10)){    // Math.floor() 소수점 버림
         case 10:
         case 9:
             grade = "A"; 
@@ -49,19 +50,81 @@ function input(){
 
 
 
-// 요구사항 -3
-/*function button1(){
-    
-    for (let i=1; i<7; i++){
-       ("<h" + i + ">Hello JavaScript</h" + i + ">");
 
-       document.getElementsByName("typebox")
+// 요구사항 -2
+const computerNumber = Math.floor((Math.random() * 10) + 1);
+let nGuesses = 0;
+let gameOver = false;
+
+function guess(){
+    if (gameOver) return;
+
+    // 아래 초기화 작업이 존재하지 않는다면
+    // let number = parseInt(document.getElementById("user").value);
+
+    let input = document.getElementById("user");
+    let number = parseInt(input.value);
+    let result = "";
+
+    // 입력값 유효성 검사 
+    if (isNaN(number) || number<1 || number>10){
+        alert("1부터 10사이의 숫자를 입력해 주세요.");
+        input.value = "";
+        input.focus();
+        return;
+    }
+    nGuesses++;
+
+    if (number === computerNumber){
+        result = "성공입니다!";
+        gameOver = true;
+    } else if (number < computerNumber){
+        result = "입력한 숫자가 너무 낮습니다.";
+    } else {
+        result = "입력한 숫자가 너무 높습니다.";
     }
 
+    document.getElementById("result").value = result;
+    document.getElementById("guesses").value = nGuesses;
+
+    input.value = "";
+    input.focus();
+}
 
 
-    nums = [1,2,3,4,5,6]
-    for (let i : nums){
-        "<h" + i + ">Hello JavaScript</h" + i ">"   
+
+
+
+
+//요구사항 -3
+function print(){
+    const hprint = document.getElementById("hprint");
+    const imgprint = document.getElementById("imgprint");
+
+    hprint.innerHTML = "";
+    imgprint.innerHTML = "";
+
+    for(let i=1; i<=6; i++){
+        hprint.innerHTML += `<h${i}> Hello JavaScript </h${i}`;
     }
-}*/
+    for(let j=1; j<=3; j++){
+        imgprint.innerHTML += `<img src='../image/${i}.jpg' />`;
+    }
+}
+
+
+
+function gugudanPrint() {
+    let data = "";
+    const gugudan = document.getElementById("gugudan");
+
+    for (let i = 1; i <= 9; i++) {
+        data += "<table>";
+        data += `<tr><th>${i}단</th></tr>`;
+        for (let j = 1; j <= 9; j++) {
+            data += `<tr><td>${i} x ${j} = ${i * j}</td></tr>`;
+        }
+        data += "</table>";
+    }
+    gugudan.innerHTML = data; 
+}
