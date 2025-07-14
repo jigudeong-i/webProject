@@ -1,0 +1,25 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 600px;
+}
+.card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 6ps;
+    background-color: fafafa;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.05);
+}
+.card .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+.card .meta {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+.card .contents {
+    margin-top: 8px;
+}

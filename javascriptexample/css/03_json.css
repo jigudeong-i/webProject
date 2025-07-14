@@ -1,0 +1,27 @@
+table{
+    border-collapse: collapse;
+    width: 600px;
+    margin-top: 20px;
+    table-layout: fixed;
+}
+th, td{
+    border: 1px solid #aaa;
+    padding: 8px;
+    text-align: left;
+}
+
+colgroup col:nth-child(1) { width: 60%; }
+colgroup col:nth-child(2) { width: 20%; }
+colgroup col:nth-child(3) { width: 20%; }
+th{
+    background-color: #e0dfdf;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+input{
+    margin-right: 10px;
+}

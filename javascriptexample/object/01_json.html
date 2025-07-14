@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>json(1) - 01_json.html</title>
+        <link rel="stylesheet" href="../css/01_json.css" />
+    </head>
+
+    <body>
+        <div class="div-default">
+            <h2>JSON의 기본 형태</h2>
+            <button type="buton" id="btnDefault">기본 형태로 출력</button>
+            <div id="view"></div>
+        </div>
+
+
+
+        <div class="div-array">
+            <h2>JSON에 배열 데이터 할당하기</h2>
+            <button type="button" id="btnJsonArray">JSON에 배열 데이터 할당</button>
+            <h3 id="name"></h3>
+            <p>
+                <strong>설립년도: </strong><span id="since"></span>
+            </p>
+
+            <h4>주요 사업 부서</h4>
+            <ul id="department"></ul>
+
+            <h4>주요 사업 분야</h4>
+            <ul id="biz"></ul>
+        </div>
+
+
+
+        <div>
+            <h2>JSON을 포함하는 JSON (중첩 객체)</h2>
+            <button type="button" id="btnDisplayJsonTree">JSON을 호함하는 JSON(중첩 객체) 출력</button>
+            <h3>회사 인원 정보</h3>
+            <table id="companyTable">
+                <thead>
+                    <tr>
+                        <th>직책</th>
+                        <th>이름</th>
+                        <th>나이</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+
+        
+        <script src="../js/01_json.js"></script>
+    </body>
+</html>
