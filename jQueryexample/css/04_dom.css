@@ -1,0 +1,20 @@
+table{
+    border-collapse: collapse; 
+    border:2px solid #000;
+}
+
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border:1px solid #000; 
+}
+
+#area {
+    width: 400px;
+    height: 300px;
+}
+
+ul {
+    padding-top: 40px;
+}

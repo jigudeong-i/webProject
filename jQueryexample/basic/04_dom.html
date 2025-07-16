@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DOM(Document Object Model) - 04_dom.html</title>
+		<link rel="stylesheet" href="../css/04_dom.css" />
+	</head>
+	<body>
+		<!--
+		탐색 함수 	
+		- next() : 현재 요소의 다음 요소를 반환. $('요소명').next()
+		- prev() : 현재 요소의 이전 요소를 반환. $('요소명').prev()
+		- parent() : 현재 요소의 부모 요소를 반환. $('요소명').parent()
+		- children() : 현재 요소의 자식 요소를 반환. $('요소명').children()
+		- eq(n) : 요소의 n번째 index 요소를 반환. $('요소명').eq(n) or $('요소명:eq(n)')
+		- parents(): 선택된 요소의 모든 상위 요소 반환. $('요소명').parents([매개변수])
+		- find(): 선택된 요소의 인자와 일치하는 모든 하위 요소 반환. $('요소명').find(매개변수) 
+		-->
+		<table>
+			<tr>
+				<td>1번</td>
+				<td>2번</td>
+				<td>3번</td>
+			</tr>
+			<tr>
+				<td>4번</td>
+				<td>5번</td>
+				<td>6번</td>
+			</tr>
+			<tr>
+				<td>7번</td>
+				<td>8번</td>
+				<td>9번</td>
+			</tr>
+		</table>	
+		
+		<div id="area">
+			<ul id="menu">
+				<li class="item">
+					<a href="#">../image/page1.jpg</a>  <!-- a href="#" 임시 링크 -->
+				</li>
+				<li class="item">
+					<a href="#">../image/page2.jpg</a>
+				</li>
+				<li class="item">
+					<a href="#">../image/page3.jpg</a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="../js/jquery-3.7.1.min.js"></script>
+		<script src="../js/04_dom.js"></script>
+	</body>
+</html>
