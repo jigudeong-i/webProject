@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>form - form.html</title>
+		<link rel="stylesheet" href="../css/form.css" />
+	</head>
+	<body>
+		<form name="form1" id="form1"> 
+			<div id="member">
+				<fieldset>  <!-- 여러개의 폼 요소 그룹화시 사용-->
+					<legend>회원가입</legend>
+					<div class="input_group">
+						<label>이름<span>*</span></label>
+						<input type="text" name="user_name" id="user_name"/>
+					</div>
+					<div class="input_group">
+						<label>성별<span>*</span></label>
+						<label><input type="radio" name="gender" value="남자"> 남자</label>
+						<label><input type="radio" name="gender" value="여자"> 여자</label>
+					</div>
+					<div class="input_group">
+						<label>직업<span>*</span></label>
+						<select name="job" id="job">
+							<option value="">----- 선택하세요 -----</option>    <!-- 공백시 -->
+							<option value="프로그래머">프로그래머</option>
+							<option value="퍼블리셔">퍼블리셔</option>
+							<option value="학생">학생</option>
+						</select>
+					</div>
+					<div class="input_group">
+						<label>취미<span>*</span></label>
+						<label><input type="checkbox" value="걷기" name="hobby"> 걷기</label>
+						<label><input type="checkbox" value="축구" name="hobby"> 축구</label>
+						<label><input type="checkbox" value="농구" name="hobby"> 농구</label>
+						<label><input type="checkbox" value="야구" name="hobby"> 야구</label>
+						<label><input type="checkbox" value="여행" name="hobby"> 여행</label>
+						<label><input type="checkbox" value="영화" name="hobby"> 영화</label>
+					</div>
+					<!-- 
+					<div class="input_group">
+						<label>전화번호</label>
+						<input type="tel" name="phone" id="phone" />(-없이 입력)
+					</div>	 
+					-->					
+					<div class="input_group">
+						<span>
+							<button type="button" id="sendBtn">가입</button> 
+							<button type="reset">초기화</button>
+						</span>
+					</div>
+				</fieldset>
+			</div>
+		</form>
+
+		<script src="../js/form.js"></script>
+	</body>
+</html>

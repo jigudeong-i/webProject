@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>정규 표현식 - form_regular.html</title>
+        <style>
+            .area{
+                width: 500px;
+                min-height: 300px; 
+                border: 1px solid black;
+                margin-top: 8px;
+            }
+            .confirm { color: green;}
+            .error   { color: red;  }
+        </style>
+
+    </head>
+    <body>
+        
+        <h1>정규 표현식(Regular Expression)</h1>
+        <pre>
+            특정한 규칙이나 패턴을 가진 문자열을 찾거나 처리하기 위한 표현식.
+
+            문자열을 추출하거나 치환, 
+            특정 문자열이 포함되어 있는지 여부를 확인하거나 
+            입력값을 검증할 때 사용된다.
+        </pre>
+
+        <h1>정규 표현식 객체 생성 및 확인하기</h1>
+        <pre>
+            1. 정규 표현식 객체 생성 방법
+
+            1) const regExp = new RegExp("정규표현식");
+            2) const regExp = /정규표현식/;
+                -> 양쪽 '/' 기호 정규 표현식의 리터럴 표기법
+
+            2. 문자열 패턴 확인 메소드(함수)
+
+            1) regExp.test(문자열)
+                -> 문자열에 정규표현식과 일치하는 패턴이 있을 경우 true, 없으면 false
+
+            2) regExp.exec(문자열)
+                -> 문자열에 정규표현식과 일치하는 패턴이 있을 경우
+                처음 매칭되는 문자열을 반환
+                없으면 null 반환
+        </pre>
+
+        <h1>정규 표현식의 메타 문자</h1>
+        <pre>
+            문자열의 패턴을 나타내는 문자열
+            문자마다 지정된 특별한 뜻이 담겨있다.
+
+            a (일반문자열) : 문자열 내에 a라는 문자열이 존재하는지 검색
+            [abcd] : 문자열 내에 a,b,c,d 중에 하나라도 일치하는 문자가 있는지 검색
+            ^(캐럿) : 문자열의 시작을 의미
+            $ : 문자열의 끝을 의미
+
+            \w (word, 단어) : 임의의 한 문자 (단, 띄어쓰기, 특수문자, 한글 X)
+            \d (digit, 숫자) : 임의의 숫자(0~9 중 하나) [0-9]
+            \s (space, 공간) : 공백 문자(띄어쓰기, 엔터, 탭 등)
+
+            [0-9] : 0부터 9까지 모든 숫자
+            [ㄱ-힣] : ㄱ부터 힣까지 모든 한글
+            [a-z] : 모든 영어 소문자
+            [A-Z] : 모든 영어 대문자
+
+            * 특수문자의 경우 각각을 입력하는 방법밖엔 없음
+            단, 메타문자와 중복되는 특수문자는 앞에 \(백슬래시)를 추가하여 escape로 만들어 사용
+            
+            * 수량 관련 메타 문자
+            a{5} : a문자가 5개 존재 == aaaaa
+            a{2,5} : a가 2개 이상 5개 이하 == aa, aaa, aaaa, aaaaa
+            a{2,} : a가 2개 이상
+
+            * : 0개 이상 == 0번 이상 반복 == 있어도 되고, 없어도 되고
+            + : 1개 이상 == 1번 이상 반복
+            ? : 0개 또는 1개
+            . : 임의의 한문자 (개행문자를 제외한 문자 하나)
+        </pre>
+
+        <button type="button" id="btn1">확인하기</button>
+        <div id="div1" class="area"></div>
+        <hr />
+        
+        
+        <h2>정규 표현식 예제</h2>
+
+
+        <h3>이름 유효성 검사</h3>
+        <h5>한글 2~5글자</h5>
+        <label for="inputName">이름 : </label> <!-- id가 inputName인 요소를 위한 라벨. 라벨 클릭시 자동으로 커서가 input으로 이동 -->
+        <input type="text" id="inputName" /> <br />
+        <span id="inputNameResult"></span>   
+        <hr />
+
+
+
+        <h3>아이디 유효성 검사</h3>
+        <div>
+            [아이디 입력 조건]<br />
+            1. 입력되는 전체 길이는 5~8자이어야 한다.<br />
+            2. 아이디는 첫글자 영문자로, 나머지 숫자와 영문자만 사용가능하다.<br />
+        </div>
+        <label>아이디</label>
+        <input type="text" name="mid" id="mid" />	
+        <button type="button" id="idCheck">확인</button><br />
+        <span id="inputIdResult"></span>
+        <hr />
+
+
+        
+        <h3>공백 유효성 검사</h3>
+        <div>
+            [조건]<br />
+            1. 값이 입력되지 않았을 때 "값(이름)을 입력해 주세요"라고 메시지 출력해 주세요.<br />
+        </div>
+        <span>회원명</span>
+        <input type="text" name="userName" id="userName"/>
+        <button type="button" id="nameCheck">확인</button><br />
+        <span id="msg"></span> 
+        <hr />
+
+
+
+        <h3>비밀번호 유효성 검사</h3>
+        <div>
+            [조건]<br />
+            1. 영문자,숫자,특수문자(@, $, !, %, *, ?, &) 포함하여 6 ~ 10로 입력받고자 한다.<br />
+            2. 위의 패턴에 맞지 않으면 "유효하지 않은 비밀번호입니다"라고 출력해 주세요<br />
+        </div>
+        <label>비밀번호</label>
+        <input type="password" name="userPwd" id="userPwd"/>
+        <button type="button" id="pwdCheck">확인</button><br />
+        <span id="message"></span> 
+
+
+    <script src="../js/form_regular.js"></script>
+</body>
+</html>

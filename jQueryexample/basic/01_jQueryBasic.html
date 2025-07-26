@@ -1,0 +1,111 @@
+<!-- 
+	jQuery는 자바스크립트로 작성된 오픈소스 JavaScript 라이브러리이다. 
+	브라우저 간의 차이(크로스브라우징 문제)를 해결하고, 
+	복잡한 DOM 조작이나 이벤트 처리, 애니메이션 효과, Ajax 처리 등을 
+	더 간결하고 쉽게 할 수 있도록 도와준다.
+ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>jQueryInit - 01_jQueryBasic.html</title>
+		<style>
+			#treeImage { 
+				width:120px; 
+				height: 79px; 
+			}
+		</style>
+	</head>
+	<body>
+        <h3>JS와 jQuery 차이점</h3>
+        <button type="button" id="jsBtn">JS 버튼</button>
+        <button type="button" id="jQueryBtn">jQuery 버튼</button>
+        <hr />
+
+		<div id="wrapper">
+			<ul>
+				<li class="one">첫번째</li>
+				<li class="two">두번째</li>
+				<li class="three">
+					<span>세번째(글자색을 red로 설정해 보세요)</span></li>
+				<li class="four">네번째</li>
+			</ul>
+			<button type="button" id="colorChange">색변경</button>
+		</div>
+
+
+		<h5>예제-1</h5>
+		<pre>
+			[참고]
+			JS: document.getElementById("id명").innerHTML = 값 
+			jQuery: $("#id명").html("값")
+		</pre>
+		<h1 id="hello">jQuery 시작합니다~~</h1>
+		<p id="text"></p>
+		<button type="button" id="btnChange">데이터 변경</button>				
+
+
+
+		<h5>예제-2</h5>
+		<p>
+			<img src="../image/easys-1.jpg" alt="이미지" id="img" />
+		</p>
+
+
+
+		<div>
+		<h5>예제-3</h5>
+		<pre>
+		[요구사항]
+		1. "010-1234-5678" 형식으로 핸드폰 번호를 입력받고자 한다.<br />
+		2. 위의 패턴에 맞지 않으면 "전화번호 형식이 유효하지 않습니다."라고 출력해 주세요<br />    
+
+		[참고]
+		input 요소의 값을 얻고자 할 때 
+		JS: document.getElementById("id명").value ;
+		jQuery: $("#id명").val();
+		</pre>
+		<label for="phone">전화번호</label>
+		<input type="text" id="phone" placeholder="010-1234-5678" /><br />
+		<span id="phoneResult"></span>
+		</div>
+
+
+
+		<h5>예제-4</h5>
+		<div id="input">
+			<h2>단독 개체의 확인</h2>
+			<div id="singleButton">클릭하세요.</div>
+			
+			<h2>복수 개체의 확인</h2>
+			<div>
+				<button type="button" class="multiButton">클릭하세요.</button>
+				<button type="button" class="multiButton">클릭하세요.</button>
+				<button type="button" class="multiButton">클릭하세요.</button>
+				<button type="button" class="multiButton">클릭하세요.</button>
+			</div>
+		</div>
+
+		
+
+		<h5>예제-5</h5>
+		<p>이미지를 클릭하세요.</p>
+		<img src="../image/tree-1.jpg" alt="이미지" id="treeImage" />
+
+
+
+
+
+		<!-- jQuery 사용법 2가지 -->
+
+        <!-- 웹페이지에서 사용. jQuery 라이브러리를 웹페이지에 포함시켜야 한다. -->
+		<!-- CDN(Content Delivery Network: 콘텐츠 전송 네트워크) 사용(온라인 방식) -->		
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script src="../js/01_jQueryBasic.js"></script>
+
+		<!-- 다운로드한 jQuery 파일 사용 (로컬 방식) -->
+		<!-- <script src="../js/jquery-3.7.1.min.js"></script> -->
+	</body>
+</html>
