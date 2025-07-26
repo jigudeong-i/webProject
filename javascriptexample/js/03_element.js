@@ -1,17 +1,18 @@
 // id로 접근하기
 function accessId(){
     const div1 = document.getElementById("div1");
-    // 접근한 요소의 배경색 얻어오기
-    const bgColor = div1.style.backgroundColor;
-
-    // document.getElementById("div").style.backgroundColor            
-
+    const bgColor = div1.style.backgroundColor;   // document.getElementById("div").style.backgroundColor       
+    
     if(bgColor === "red"){
         div1.style.backgroundColor = "yellow";
     }else{
         div1.style.backgroundColor = "red";
     }
 }
+
+
+
+
 
 
 // class로 접근하기 
